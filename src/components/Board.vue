@@ -1,14 +1,14 @@
 <template>
   <div>
     Board
-    <div v-if="loading">loading board....</div>
+    <div v-if="loading">loading board...</div>
     <div v-else>
-    <div>bid : {{ bid }}</div>
-    <router-link :to="`/board/${bid}/detail/1`">Card 1</router-link>
-    <router-link :to="`/board/${bid}/detail/2`">Card 2</router-link>
+      <div>bid: {{bid}}</div>
+      <router-link :to="`/b/${bid}/c/1`">Card 1</router-link>
+      <router-link :to="`/b/${bid}/c/2`">Card 2</router-link>
+      <hr />
+      <router-view></router-view>
     </div>
-    <hr />
-    <router-view></router-view>
   </div>
 </template>
 
@@ -32,11 +32,8 @@ export default {
       }, 500)
     }
   }
-
 }
-
 </script>
 
 <style>
-
 </style>

@@ -8,7 +8,6 @@
         <div v-for="b in boards" :key=b.id>
           <pre>{{b}}</pre>
         </div>
-
       </div>
     </div>
   </div>
@@ -21,7 +20,8 @@ export default {
   data () {
     return {
       loading: false,
-      apiRes: ''
+      boards: '',
+      error: ''
     }
   },
   created () {
@@ -34,7 +34,7 @@ export default {
         .then(data => {
           this.boards = data
         })
-        .finally(() => {
+        .finally(_ => {
           this.loading = false
         })
     }
