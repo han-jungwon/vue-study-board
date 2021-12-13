@@ -1,25 +1,22 @@
 import axios from 'axios'
 import router from '../router/index.js'
 
-const DOMAIN = 'http://localhost:9090'
+const DOMAIN = 'http://localhost:3000'
 const UNAUTHORIZED = 401
-
 const onUnauthorized = () => {
-  router.push('/login')
+  router.push(`/login?rPath=${encodeURIComponent(location.pathname)}`)
 }
 
 const request = (method, url, data) => {
   return axios({
     method,
     url: DOMAIN + url,
-    data,
-    headers: {'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json; charset = utf-8'}
+    data
   }).then(result => result.data)
     .catch(result => {
       const {status} = result.response
       if (status === UNAUTHORIZED) onUnauthorized()
-      throw Error(result)
+      throw result.response
     })
 }
 

@@ -8,7 +8,7 @@
                v-model="email" autofocus placeholder="e.g., test@test.com" />
       </div>
       <div>
-        <label for="password">Passwrod</label>
+        <label for="password">Password</label>
         <input class="form-control" type="password"
                v-model="password" placeholder="123123" />
       </div>
@@ -60,6 +60,6 @@ export default {
   margin: 0 auto;
 }
 .error {
-  color: #f00;
+  color: #ff0000;
 }
 </style>
