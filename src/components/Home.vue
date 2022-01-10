@@ -13,14 +13,13 @@
           Create new board...
         </a>
       </div>
-       <AddBoard v-if="isAddBoard">
+       <AddBoard v-if="isAddBoard"/>
     </div>
   </div>
 </template>
 
 <script>
 import {mapState, mapMutations, mapActions} from 'vuex'
-import {board} from '../api'
 import AddBoard from './AddBoard.vue'
 
 export default {
