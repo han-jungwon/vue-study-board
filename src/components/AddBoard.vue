@@ -52,10 +52,10 @@ export default {
       'FETCH_BOARDS'
     ]),
     addBoard () {
-      this.SET_IS_ADD_BOARD(false)
-      this.$emit('submit')
       this.ADD_BOARD({title: this.input})
         .then(({id}) => this.$router.push(`/b/${id}`))
+        .catch(err => console.error(err))
+        .finally(() => this.SET_IS_ADD_BOARD(false))
     }
   }
 }

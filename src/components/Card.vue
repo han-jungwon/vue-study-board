@@ -7,7 +7,9 @@
 </template>
 
 <script>
+import Modal from './Modal.vue'
 export default {
+  comments: {Modal},
   data () {
     return {
       cid: 0,

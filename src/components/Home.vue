@@ -26,7 +26,7 @@ export default {
   components: {
     AddBoard
   },
-  data: function () {
+  data () {
     return {
       loading: false,
       error: ''
